@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="android:statusBarColor">@color/background_color</item>
+        <item name="android:navigationBarColor">@color/background_color</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialComponents.MaterialAlertDialog</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialComponents.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.MaterialComponents.Title.Text</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/MaterialAlertDialog.App.MaterialComponents.Body.Text</item>
+        <item name="android:background">@color/background_color</item>
+        <item name="android:backgroundDimAmount">0.64</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App.MaterialComponents.Title.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/error_color</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App.MaterialComponents.Body.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">?attr/colorControlNormal</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?attr/colorControlNormal</item>
+        <item name="rippleColor">@color/background_shade_color</item>
+    </style>
+</resources>

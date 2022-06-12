@@ -1,0 +1,31 @@
+#!/system/bin/sh
+
+doLog() {
+    log -t "com.jamal2367.recoveryinstaller" $1
+    echo $1
+}
+
+doLog "RK33(XX) Custom Recovery Installer"
+
+ADB=/system/bin/adb-ec
+[ ! -f $ADB ] && doLog "adb-ec in system/bin/ does not exist on this device, aborting..." && exit 1
+
+setprop sys.hct.wifi adb
+
+while [ "$($ADB get-state)" != "device" ]; do $ADB connect localhost; done
+$ADB root
+$ADB disconnect
+
+while [ "$($ADB get-state)" != "device" ]; do $ADB connect localhost >/dev/null; done
+echo adbd restarted
+
+doLog "Backup current recovery..."
+$ADB shell dd if=/dev/block/by-name/recovery of=/sdcard/recovery_backup.img
+
+doLog "Writing recovery to device..."
+$ADB shell dd if=$(dirname $0)/recovery of=/dev/block/by-name/recovery
+
+doLog "Custom recovery was successfully installed!"
+doLog "Rebooting to recovery in 5 seconds..."
+sleep 5
+$ADB reboot recovery

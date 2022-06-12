@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_title">Installation fehlgeschlagen</string>
+    <string name="error_text">Fehler: </string>
+    <string name="install">Installieren</string>
+    <string name="wait_text">Bitte warten Sie während der Installation des Custom Recovery&#8230;</string>
+</resources>

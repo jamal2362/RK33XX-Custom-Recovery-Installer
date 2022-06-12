@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UseCompatTextViewDrawableXml"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="540dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:drawableStart="@mipmap/ic_launcher"
+        android:text="@string/app_name"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/install_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/background_shade_color"
+        android:text="@string/install"
+        android:textAllCaps="true"
+        android:textColor="?attr/colorControlNormal" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_shade_color">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/output_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:textColor="?attr/colorControlNormal" />
+        </HorizontalScrollView>
+    </ScrollView>
+</LinearLayout>

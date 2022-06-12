@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">RK33(XX) Custom Recovery Installer</string>
+    <string name="error_title">Installation failed</string>
+    <string name="error_text">Error: </string>
+    <string name="install">Install</string>
+    <string name="wait_text">Please wait during the installation of the Custom Recovery&#8230;</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background color -->
+    <color name="background_color">#FF1F2630</color>
+
+    <!-- Background shade color -->
+    <color name="background_shade_color">#FF2E3948</color>
+
+    <!-- Error color -->
+    <color name="error_color">#FFC62828</color>
+</resources>
