@@ -1,32 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="UseCompatTextViewDrawableXml"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:ignore="UseCompatTextViewDrawableXml">
 
     <TextView
         android:layout_width="540dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:drawableStart="@mipmap/ic_launcher"
+        android:gravity="center"
         android:text="@string/app_name"
         android:textColor="?attr/colorControlNormal"
         android:textSize="28sp" />
 
-    <Button
-        android:id="@+id/install_button"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/background_shade_color"
-        android:text="@string/install"
-        android:textAllCaps="true"
-        android:textColor="?attr/colorControlNormal" />
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/install_button_a6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorControlNormal"
+            android:text="@string/android_6"
+            android:textColor="?attr/colorControlNormal" />
+
+        <RadioButton
+            android:id="@+id/install_button_a8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorControlNormal"
+            android:text="@string/android_8"
+            android:textColor="?attr/colorControlNormal" />
+
+        <RadioButton
+            android:id="@+id/install_button_a9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorControlNormal"
+            android:text="@string/android_9"
+            android:textColor="?attr/colorControlNormal" />
+
+        <RadioButton
+            android:id="@+id/install_button_a10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="?attr/colorControlNormal"
+            android:text="@string/android_10"
+            android:textColor="?attr/colorControlNormal" />
+    </RadioGroup>
 
     <ScrollView
         android:layout_width="match_parent"

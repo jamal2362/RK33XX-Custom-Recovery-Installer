@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">RK33(XX) Custom Recovery Installer</string>
+    <string name="android_6" translatable="false">Android 6</string>
+    <string name="android_8" translatable="false">Android 8</string>
+    <string name="android_9" translatable="false">Android 9</string>
+    <string name="android_10" translatable="false">Android 10</string>
     <string name="error_title">Installation failed</string>
     <string name="error_text">Error: </string>
-    <string name="install">Install</string>
-    <string name="wait_text">Please wait during the installation of the Custom Recovery&#8230;</string>
+    <string name="wait_text_6">Please wait during the installation of the Android 6 Custom Recovery&#8230;</string>
+    <string name="wait_text_8">Please wait during the installation of the Android 8 Custom Recovery&#8230;</string>
+    <string name="wait_text_9">Please wait during the installation of the Android 9 Custom Recovery&#8230;</string>
+    <string name="wait_text_10">Please wait during the installation of the Android 10 Custom Recovery&#8230;</string>
 </resources>

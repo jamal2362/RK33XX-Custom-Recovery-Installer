@@ -3,5 +3,8 @@
     <string name="error_title">Installation fehlgeschlagen</string>
     <string name="error_text">Fehler: </string>
     <string name="install">Installieren</string>
-    <string name="wait_text">Bitte warten Sie während der Installation des Custom Recovery&#8230;</string>
+    <string name="wait_text_6">Bitte warten Sie während der Installation des Android 6 Custom Recovery&#8230;</string>
+    <string name="wait_text_8">Bitte warten Sie während der Installation des Android 8 Custom Recovery&#8230;</string>
+    <string name="wait_text_9">Bitte warten Sie während der Installation des Android 9 Custom Recovery&#8230;</string>
+    <string name="wait_text_10">Bitte warten Sie während der Installation des Android 10 Custom Recovery&#8230;</string>
 </resources>

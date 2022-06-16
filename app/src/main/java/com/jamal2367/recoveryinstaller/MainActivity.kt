@@ -13,11 +13,18 @@ import com.jamal2367.recoveryinstaller.databinding.ActivityMainBinding
 import com.jaredrummler.android.shell.Shell
 import java.io.IOException
 
+
 class MainActivity : Activity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var mRecoveryFilePath: String? = null
-    private var mScriptFilePath: String? = null
+    private var mRecovery6FilePath: String? = null
+    private var mRecovery8FilePath: String? = null
+    private var mRecovery9FilePath: String? = null
+    private var mRecovery10FilePath: String? = null
+    private var mScript6FilePath: String? = null
+    private var mScript8FilePath: String? = null
+    private var mScript9FilePath: String? = null
+    private var mScript10FilePath: String? = null
     private var mCurrentText: String? = null
     private val mShellMessageHandler = MessageHandler()
 
@@ -57,37 +64,95 @@ class MainActivity : Activity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(binding.root)
-        binding.installButton.setOnClickListener(onInstallClickListener)
+        binding.installButtonA6.setOnClickListener(onInstallA6ClickListener)
+        binding.installButtonA8.setOnClickListener(onInstallA8ClickListener)
+        binding.installButtonA9.setOnClickListener(onInstallA9ClickListener)
+        binding.installButtonA10.setOnClickListener(onInstallA10ClickListener)
         setupRawResources()
     }
+
 
     // Writes the bundled recovery and script to internal disc and saves their respective paths
     private fun setupRawResources() {
         try {
-            mRecoveryFilePath = writeRawResourcesToDisc("recovery")
-            mScriptFilePath = writeRawResourcesToDisc("script")
+            mRecovery6FilePath = writeRawResourcesToDisc("recovery6")
+            mRecovery8FilePath = writeRawResourcesToDisc("recovery8")
+            mRecovery9FilePath = writeRawResourcesToDisc("recovery9")
+            mRecovery10FilePath = writeRawResourcesToDisc("recovery10")
+            mScript6FilePath = writeRawResourcesToDisc("script6")
+            mScript8FilePath = writeRawResourcesToDisc("script8")
+            mScript9FilePath = writeRawResourcesToDisc("script9")
+            mScript10FilePath = writeRawResourcesToDisc("script10")
         } catch (e: IOException) {
-            Log.i(
-                "com.jamal2367.recoveryinstaller",
-                "Error when trying to save recovery resource: " + e.message
-            )
+            Log.i("com.jamal2367.recoveryinstaller", "Error when trying to save recovery resource: " + e.message)
         }
     }
 
     // Runs the bundled script (that replaces the built-in recovery with the custom recovery)
-    private val onInstallClickListener = View.OnClickListener {
+    private val onInstallA6ClickListener = View.OnClickListener {
         Thread {
             Log.i("com.jamal2367.recoveryinstaller", "Starting installation of custom recovery..")
-            mCurrentText = getString(R.string.wait_text)
+            mCurrentText = getString(R.string.wait_text_6)
             // Update GUI with wait text..
             mShellMessageHandler.sendEmptyMessage(-127)
             // Run shell script
-            val commandResult = Shell.SH.run(mScriptFilePath)
+            val commandResult = Shell.SH.run(mScript6FilePath)
             // Get shell command result
             mCurrentText = commandResult.getStdout()
             // Update GUI with command result
             mShellMessageHandler.sendEmptyMessage(commandResult.exitCode)
-            Log.i("com.jamal2367.recoveryinstaller", "Installing custom recovery finished..")
+            Log.i("com.jamal2367.recoveryinstaller", "Installing Android 6 Custom Recovery finished..")
+        }.start()
+    }
+
+    // Runs the bundled script (that replaces the built-in recovery with the custom recovery)
+    private val onInstallA8ClickListener = View.OnClickListener {
+        Thread {
+            Log.i("com.jamal2367.recoveryinstaller", "Starting installation of custom recovery..")
+            mCurrentText = getString(R.string.wait_text_8)
+            // Update GUI with wait text..
+            mShellMessageHandler.sendEmptyMessage(-127)
+            // Run shell script
+            val commandResult = Shell.SH.run(mScript8FilePath)
+            // Get shell command result
+            mCurrentText = commandResult.getStdout()
+            // Update GUI with command result
+            mShellMessageHandler.sendEmptyMessage(commandResult.exitCode)
+            Log.i("com.jamal2367.recoveryinstaller", "Installing Android 8 Custom Recovery finished..")
+        }.start()
+    }
+
+    // Runs the bundled script (that replaces the built-in recovery with the custom recovery)
+    private val onInstallA9ClickListener = View.OnClickListener {
+        Thread {
+            Log.i("com.jamal2367.recoveryinstaller", "Starting installation of custom recovery..")
+            mCurrentText = getString(R.string.wait_text_9)
+            // Update GUI with wait text..
+            mShellMessageHandler.sendEmptyMessage(-127)
+            // Run shell script
+            val commandResult = Shell.SH.run(mScript9FilePath)
+            // Get shell command result
+            mCurrentText = commandResult.getStdout()
+            // Update GUI with command result
+            mShellMessageHandler.sendEmptyMessage(commandResult.exitCode)
+            Log.i("com.jamal2367.recoveryinstaller", "Installing Android 9 Custom Recovery finished..")
+        }.start()
+    }
+
+    // Runs the bundled script (that replaces the built-in recovery with the custom recovery)
+    private val onInstallA10ClickListener = View.OnClickListener {
+        Thread {
+            Log.i("com.jamal2367.recoveryinstaller", "Starting installation of custom recovery..")
+            mCurrentText = getString(R.string.wait_text_10)
+            // Update GUI with wait text..
+            mShellMessageHandler.sendEmptyMessage(-127)
+            // Run shell script
+            val commandResult = Shell.SH.run(mScript10FilePath)
+            // Get shell command result
+            mCurrentText = commandResult.getStdout()
+            // Update GUI with command result
+            mShellMessageHandler.sendEmptyMessage(commandResult.exitCode)
+            Log.i("com.jamal2367.recoveryinstaller", "Installing Android 10 Custom Recovery finished..")
         }.start()
     }
 
@@ -95,12 +160,8 @@ class MainActivity : Activity() {
     @SuppressLint("SetWorldWritable", "SetWorldReadable")
     @Throws(IOException::class)
     private fun writeRawResourcesToDisc(rawResourceName: String): String {
-        Log.i(
-            "com.jamal2367.recoveryinstaller",
-            "Trying to write resource with name: $rawResourceName to disc."
-        )
-        val rawResource =
-            resources.openRawResource(resources.getIdentifier(rawResourceName, "raw", packageName))
+        Log.i("com.jamal2367.recoveryinstaller", "Trying to write resource with name: $rawResourceName to disc.")
+        val rawResource = resources.openRawResource(resources.getIdentifier(rawResourceName, "raw", packageName))
         val rawResourceBytes = ByteArray(rawResource.available())
         rawResource.read(rawResourceBytes)
         rawResource.close()
